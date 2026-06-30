@@ -4,7 +4,6 @@ import VideoHero from "@/components/VideoHero";
 import AnimatedSection from "@/components/AnimatedSection";
 import TiltCard from "@/components/TiltCard";
 import FilmCarousel from "@/components/FilmCarousel";
-import MapSection from "@/components/MapSection";
 
 export const metadata: Metadata = {
   title: "Westchester & New York Wedding Videographer | Renivision Weddings",
@@ -226,9 +225,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* Map Section */}
-      <MapSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
