@@ -96,9 +96,8 @@ export default function Home() {
   return (
     <>
       <section id="home">
-        <VideoHero 
-          title="honest storytelling for intentional humans."
-          tagline="Wedding videography crafted with diligent attention to detail. We produce a small batch of weddings a year. On purpose. The result, a display narrative designed to last and be passed down for generations."
+        <VideoHero
+          title="Because the most beautiful day of your life deserves to be felt forever."
           videoSrc="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-kissing-under-a-veil-44755-large.mp4"
         />
       </section>

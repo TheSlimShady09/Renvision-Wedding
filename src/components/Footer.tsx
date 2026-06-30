@@ -2,7 +2,24 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="dark-section py-20 px-4 sm:px-6 lg:px-8">
+    <footer className="dark-section">
+      {/* Scrolling name strip */}
+      <div className="w-full overflow-hidden border-t border-b border-white/10 py-5">
+        <div className="marquee-track">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span key={i} className="font-serif text-5xl md:text-7xl tracking-[0.3em] uppercase opacity-20 px-10 shrink-0 select-none">
+              Renivision
+            </span>
+          ))}
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span key={`b${i}`} className="font-serif text-5xl md:text-7xl tracking-[0.3em] uppercase opacity-20 px-10 shrink-0 select-none" aria-hidden="true">
+              Renivision
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
         {/* Brand */}
         <div>
@@ -65,6 +82,7 @@ export default function Footer() {
           <Link href="/locations/hudson-valley" className="hover:text-white">Hudson Valley</Link>
           <Link href="/locations/nyc" className="hover:text-white">New York City</Link>
         </div>
+      </div>
       </div>
     </footer>
   );

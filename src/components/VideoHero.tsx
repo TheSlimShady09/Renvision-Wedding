@@ -5,11 +5,10 @@ import { motion } from "framer-motion";
 interface VideoHeroProps {
   youtubeId?: string;
   videoSrc?: string;
-  tagline: string;
   title: string;
 }
 
-export default function VideoHero({ youtubeId, videoSrc, tagline, title }: VideoHeroProps) {
+export default function VideoHero({ youtubeId, videoSrc, title }: VideoHeroProps) {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[var(--color-renivision-dark)]">
       {/* Background Video or Placeholder */}
@@ -50,32 +49,7 @@ export default function VideoHero({ youtubeId, videoSrc, tagline, title }: Video
           {title}
         </motion.h1>
         
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="font-sans text-sm md:text-base tracking-[0.3em] uppercase opacity-90 max-w-2xl"
-        >
-          {tagline}
-        </motion.p>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
-      >
-        <span className="text-xs uppercase tracking-widest text-white mb-2 opacity-70">Scroll</span>
-        <div className="w-[1px] h-12 bg-white/30 relative overflow-hidden">
-          <motion.div
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-            className="w-full h-full bg-white absolute top-0 left-0"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }
