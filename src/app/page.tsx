@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import VideoHero from "@/components/VideoHero";
 import AnimatedSection from "@/components/AnimatedSection";
 import TiltCard from "@/components/TiltCard";
@@ -97,67 +98,95 @@ export default function Home() {
     <>
       <section id="home">
         <VideoHero
-          title="Because the most beautiful day of your life deserves to be felt forever."
+          eyebrow="Renivision Weddings"
+          title="Love, written in light — and remembered forever."
+          subtitle="Cinematic wedding films, crafted to be felt for generations — Westchester · Hudson Valley · New York City."
           videoSrc="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-kissing-under-a-veil-44755-large.mp4"
         />
       </section>
 
       {/* Intro / Philosophy Section */}
-      <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
-        <AnimatedSection>
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block">Our Philosophy</span>
-          <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight max-w-4xl mx-auto">
-            We desire to design a visual, cinematic poem that displays the beauty of marriage.
+      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative">
+        <AnimatedSection className="flex flex-col items-center">
+          {/* Gold Hairline Thread Link from Hero */}
+          <div className="w-[1px] h-12 bg-gradient-to-b from-[var(--color-renivision-accent)]/40 to-transparent mb-8"></div>
+          
+          {/* Gold Monogram Brand Seal */}
+          <div className="mb-6 flex items-center justify-center relative select-none">
+            <div className="w-16 h-16 rounded-full border border-[var(--color-renivision-accent)]/30 flex items-center justify-center relative">
+              <div className="absolute inset-[3px] rounded-full border border-[var(--color-renivision-accent)]/10"></div>
+              <span className="font-serif text-lg tracking-[0.2em] text-[var(--color-renivision-accent)] translate-x-[1px] font-light">R</span>
+            </div>
+          </div>
+          
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block font-semibold">Our Philosophy</span>
+          <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight max-w-4xl mx-auto text-[var(--foreground)]">
+            We desire to design a visual, cinematic <span className="italic font-normal text-[var(--color-renivision-accent)]">poem</span> that displays the beauty of <span className="italic font-normal text-[var(--color-renivision-accent)]">marriage</span>.
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed mb-6 opacity-90 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl leading-relaxed mb-6 text-neutral-700 max-w-3xl mx-auto">
             We believe that honest human moments are as beautiful as the most incredible landscapes. It’s our aim to perfectly blend the two together to summon emotion that is joy-filled and timeless. Our mission is to craft a piece of art that causes you to reflect on the heart of your marriage for the rest of your lives.
           </p>
+          
+          {/* Bottom Hairline Thread */}
+          <div className="w-[1px] h-12 bg-gradient-to-t from-[var(--color-renivision-accent)]/30 to-transparent mt-10"></div>
         </AnimatedSection>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 md:py-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto editorial-border border-t">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
-          <AnimatedSection>
-            <div className="aspect-[3/4] relative overflow-hidden bg-neutral-100">
-              <Image
-                src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=800"
-                alt="Renis filming a luxury wedding"
-                fill
-                className="object-cover animate-pulse-slow"
-              />
+      {/* About / Our Story Section */}
+      <section id="about" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto editorial-border border-t">
+        {/* 1 — Text appears first */}
+        <AnimatedSection className="text-center max-w-3xl mx-auto">
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-5 block font-semibold">Our Story</span>
+          <h2 className="font-serif text-4xl md:text-6xl mb-6 leading-tight text-[var(--foreground)]">
+            Westchester & <span className="italic font-normal text-[var(--color-renivision-accent)]">New York</span> Wedding Videographer
+          </h2>
+          <h3 className="text-sm tracking-[0.2em] uppercase opacity-60 mb-10 font-sans">
+            Documenting Legacies Since 2014
+          </h3>
+          <div className="space-y-6 text-lg leading-relaxed font-sans text-neutral-700">
+            <p>
+              Hi, my name is Renis, a wedding videographer based in Westchester, New York. Over the past 10 years, I have had the honor of documenting weddings and elopements all across the world.
+            </p>
+            <p>
+              I firmly believe less is more. I love my family, God, and the beautiful world he has designed. When not creating art, I can be found building Lego towers with my three boys. We enjoy spending quiet days with our family and friends in New York.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* 2 — Photo appears next */}
+        <AnimatedSection delay={0.25} className="mt-16 md:mt-20">
+          <div className="aspect-[16/10] relative overflow-hidden bg-neutral-100 rounded-[2.5rem] shadow-xl group">
+            <Image
+              src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=1400"
+              alt="Renis filming a luxury wedding"
+              fill
+              className="object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 text-[10px] uppercase tracking-[0.25em] text-white/70 font-sans z-10 select-none">
+              RENIVISION ARCHIVES
             </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block">Meet Renis</span>
-            <h2 className="font-serif text-4xl md:text-6xl mb-6 leading-tight">
-              Westchester & New York Wedding Videographer
-            </h2>
-            <h3 className="text-sm tracking-[0.2em] uppercase opacity-60 mb-8 font-sans">
-              Documenting Legacies Since 2014
-            </h3>
-            <div className="space-y-6 text-lg opacity-90 leading-relaxed font-sans">
-              <p>
-                Hi, my name is Renis, a wedding videographer based in Westchester, New York. Over the past 10 years, I have had the honor of documenting weddings and elopements all across the world.
-              </p>
-              <p>
-                I firmly believe less is more. I love my family, God, and the beautiful world he has designed. When not creating art, I can be found building Lego towers with my three boys. We enjoy spending quiet days with our family and friends in New York.
-              </p>
+          </div>
+        </AnimatedSection>
+
+        {/* 3 — Client comment appears last */}
+        <AnimatedSection delay={0.5} className="mt-16 md:mt-20 max-w-3xl mx-auto">
+          <div className="p-10 md:p-14 bg-[#F5F4F0]/70 rounded-[2.5rem] border border-neutral-200/60 relative overflow-hidden text-center">
+            <span className="absolute top-2 left-1/2 -translate-x-1/2 font-serif text-[8rem] text-[var(--color-renivision-accent)]/15 select-none pointer-events-none leading-none">“</span>
+            <blockquote className="font-serif text-xl md:text-2xl italic text-neutral-800 leading-relaxed relative z-10 mb-8 pt-6">
+              "Their talent speaks for itself and as a bride, I can't express how much of a relief it was to trust their vision, so I could stay in the moment. Choosing Renivision was the best investment we've made thus far!"
+            </blockquote>
+            <div className="flex items-center justify-center gap-3 font-sans relative z-10">
+              <span className="w-6 h-[1px] bg-[var(--color-renivision-accent)]"></span>
+              <span className="text-xs uppercase tracking-widest font-semibold text-neutral-500">Christine & Ronald</span>
+              <span className="w-6 h-[1px] bg-[var(--color-renivision-accent)]"></span>
             </div>
-            
-            {/* Testimonial 1 */}
-            <div className="mt-12 pt-8 border-t editorial-border italic text-base opacity-80">
-              <p className="mb-4">
-                "Their talent speaks for itself and as a bride, I can't express how much of a relief it was to trust their vision, so I could stay in the moment. Choosing Renivision was the best investment we've made thus far!"
-              </p>
-              <span className="text-xs uppercase tracking-widest font-sans not-italic font-medium">— Christine & Ronald</span>
-            </div>
-          </AnimatedSection>
-        </div>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Films Section */}
-      <section id="films" className="relative dark-section py-24 md:py-32 pl-4 sm:pl-6 lg:pl-8 overflow-hidden">
+      <section id="films" className="relative dark-section py-20 md:py-28 pl-4 sm:pl-6 lg:pl-8 overflow-hidden">
         <video 
           autoPlay 
           loop 
@@ -171,10 +200,10 @@ export default function Home() {
         
         <div className="relative z-10 max-w-[1400px] mx-auto pr-0">
           <AnimatedSection>
-            <div className="mb-12 pr-4 sm:pr-6 lg:pr-8 max-w-7xl mx-auto">
-              <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block">Our Portfolio</span>
+            <div className="mb-12 pr-4 sm:pr-6 lg:pr-8 max-w-3xl mx-auto text-center">
+              <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block font-semibold">Our Portfolio</span>
               <h2 className="font-serif text-4xl md:text-6xl mb-6">Featured Films</h2>
-              <p className="font-sans text-lg opacity-80 max-w-2xl">
+              <p className="font-sans text-lg opacity-80 max-w-2xl mx-auto">
                 Wedding films designed to last and be passed down for generations. Exploring genuine emotions and editorial elegance.
               </p>
             </div>
@@ -185,35 +214,35 @@ export default function Home() {
       </section>
 
       {/* Journal / Blog Section */}
-      <section id="journal" className="py-32 md:py-48 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto editorial-border border-b border-t">
+      <section id="journal" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto editorial-border border-b border-t">
         <AnimatedSection>
           <div className="text-center mb-20">
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block">The Journal</span>
             <h2 className="font-serif text-5xl md:text-7xl uppercase tracking-wider text-opacity-80">Articles & Advice</h2>
           </div>
         </AnimatedSection>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 md:gap-y-24 items-stretch">
           {journalPosts.map((post, index) => (
-            <AnimatedSection key={post.slug} delay={index * 0.1} className={index % 2 === 1 ? "md:mt-24" : ""}>
-              <div className="group cursor-pointer">
+            <AnimatedSection key={post.slug} delay={index * 0.1} className="h-full">
+              <Link href={`/journal/${post.slug}`} className="group flex h-full flex-col cursor-pointer">
                 <TiltCard>
-                  <div className={`bg-neutral-100 mb-8 overflow-hidden relative ${index % 2 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+                  <div className="bg-neutral-100 mb-8 overflow-hidden relative aspect-[4/3] rounded-[2rem]">
                     <Image src={post.img} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                 </TiltCard>
-                <div className="pl-4 border-l editorial-border font-sans">
+                <div className="flex flex-1 flex-col pl-6 md:pl-8 border-l editorial-border font-sans">
                   <p className="text-xs uppercase tracking-[0.2em] opacity-60 mb-3">{post.date}</p>
-                  <h3 className="font-serif text-2xl md:text-3xl mb-4 group-hover:text-[var(--color-renivision-accent)] transition-colors leading-snug">{post.title}</h3>
-                  <p className="text-sm opacity-80 leading-relaxed max-w-md">{post.excerpt}</p>
+                  <h3 className="font-serif text-2xl md:text-3xl mb-4 min-h-[4.5rem] md:min-h-[6.5rem] line-clamp-2 group-hover:text-[var(--color-renivision-accent)] transition-colors leading-snug">{post.title}</h3>
+                  <p className="text-sm opacity-80 leading-relaxed line-clamp-3">{post.excerpt}</p>
                 </div>
-              </div>
+              </Link>
             </AnimatedSection>
           ))}
         </div>
       </section>
 
       {/* Testimonials / Experience Section */}
-      <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 border-b border-neutral-100">
+      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-neutral-50 border-y border-neutral-100">
         <div className="max-w-4xl mx-auto text-center font-sans">
           <AnimatedSection>
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] mb-6 block">Client Experience</span>
@@ -226,46 +255,125 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-          <AnimatedSection>
-            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block">Say Hello</span>
-            <h2 className="font-serif text-4xl md:text-6xl mb-6 leading-tight">Inquire</h2>
-            <p className="text-lg opacity-80 mb-12 max-w-md font-sans">
-              We take on a limited number of weddings each year to ensure every film receives our full creative dedication and diligent attention to detail.
+      <section id="contact" className="relative dark-section py-20 md:py-28 overflow-hidden bg-[var(--color-renivision-dark)]">
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 z-0"
+          src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-embracing-in-nature-44752-large.mp4"
+        />
+        {/* Dark overlay to guarantee text contrast */}
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+          <AnimatedSection className="text-center md:text-left flex flex-col items-center md:items-start text-white">
+            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block font-semibold">Say Hello</span>
+            <h2 className="font-serif text-5xl md:text-7xl mb-6 leading-tight text-white">
+              Let's Co-create <br />Your <span className="italic font-normal text-[var(--color-renivision-accent)]">Legacy</span>
+            </h2>
+            <p className="text-lg text-white/80 mb-8 max-w-md font-sans leading-relaxed mx-auto md:mx-0">
+              We take on a limited number of commissions each year to ensure every film receives our full creative dedication and diligent attention to detail.
             </p>
+            <div className="space-y-4 text-sm font-sans text-white/60">
+              <p className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-renivision-accent)]"></span>
+                Westchester · Hudson Valley · NYC & Worldwide
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-renivision-accent)]"></span>
+                Response time: Within 24-48 hours
+              </p>
+            </div>
           </AnimatedSection>
           
           <AnimatedSection delay={0.2}>
-            <form className="space-y-6 font-sans">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col">
-                  <label htmlFor="name" className="text-xs uppercase tracking-widest mb-2 opacity-70">Name</label>
-                  <input type="text" id="name" className="bg-transparent border-b border-neutral-300 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors" required />
+            {/* Luxury Concierge Inquiry Card - Glassmorphism style */}
+            <div className="bg-black/40 backdrop-blur-md p-8 sm:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden text-white">
+              <span className="absolute -bottom-10 -right-10 font-serif text-[12rem] text-[var(--color-renivision-accent)]/5 select-none pointer-events-none leading-none">R</span>
+
+              <h3 className="font-serif text-2xl md:text-3xl mb-8 text-white font-light leading-snug">
+                Inquire <span className="italic font-normal text-[var(--color-renivision-accent)]">Availability</span>
+              </h3>
+              
+              <form className="space-y-6 font-sans relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col">
+                    <label htmlFor="fullName" className="text-xs uppercase tracking-widest mb-2 text-white/70">Full name *</label>
+                    <input type="text" id="fullName" name="fullName" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white" required />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="fianceName" className="text-xs uppercase tracking-widest mb-2 text-white/70">Fiance's full name *</label>
+                    <input type="text" id="fianceName" name="fianceName" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white" required />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col">
+                    <label htmlFor="email" className="text-xs uppercase tracking-widest mb-2 text-white/70">Email *</label>
+                    <input type="email" id="email" name="email" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white" required />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="phone" className="text-xs uppercase tracking-widest mb-2 text-white/70">Phone number *</label>
+                    <input type="tel" id="phone" name="phone" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white" required />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col">
+                    <label htmlFor="referral" className="text-xs uppercase tracking-widest mb-2 text-white/70">How did you find us? *</label>
+                    <select id="referral" name="referral" defaultValue="" required className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-white [&>option]:text-neutral-900 text-sm">
+                      <option value="" disabled>Select an option</option>
+                      <option value="instagram">Instagram</option>
+                      <option value="google">Google search</option>
+                      <option value="referral">Friend or family referral</option>
+                      <option value="venue">Venue or vendor</option>
+                      <option value="theknot">The Knot / WeddingWire</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="eventDate" className="text-xs uppercase tracking-widest mb-2 text-white/70">Event date *</label>
+                    <input type="text" id="eventDate" name="eventDate" placeholder="MM/DD/YYYY" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white placeholder-white/30" required />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col">
+                    <label htmlFor="venue" className="text-xs uppercase tracking-widest mb-2 text-white/70">Wedding Venue Location *</label>
+                    <input type="text" id="venue" name="venue" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white" required />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="style" className="text-xs uppercase tracking-widest mb-2 text-white/70">Style of Wedding *</label>
+                    <input type="text" id="style" name="style" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white" required />
+                  </div>
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="email" className="text-xs uppercase tracking-widest mb-2 opacity-70">Email</label>
-                  <input type="email" id="email" className="bg-transparent border-b border-neutral-300 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors" required />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col">
-                  <label htmlFor="date" className="text-xs uppercase tracking-widest mb-2 opacity-70">Wedding Date</label>
-                  <input type="text" id="date" placeholder="MM/DD/YYYY" className="bg-transparent border-b border-neutral-300 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors" required />
+                  <label htmlFor="instagram" className="text-xs uppercase tracking-widest mb-2 text-white/70">Instagram handles *</label>
+                  <input type="text" id="instagram" name="instagram" placeholder="@you & @your_fiance" className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors text-sm text-white placeholder-white/30" required />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="venue" className="text-xs uppercase tracking-widest mb-2 opacity-70">Venue & Location</label>
-                  <input type="text" id="venue" className="bg-transparent border-b border-neutral-300 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors" required />
+                  <label htmlFor="likeAboutWork" className="text-xs uppercase tracking-widest mb-2 text-white/70">What do you like about our work? *</label>
+                  <textarea id="likeAboutWork" name="likeAboutWork" rows={3} className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors resize-none text-sm leading-relaxed text-white" required></textarea>
                 </div>
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="message" className="text-xs uppercase tracking-widest mb-2 opacity-70">Message</label>
-                <textarea id="message" rows={4} className="bg-transparent border-b border-neutral-300 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors resize-none" required></textarea>
-              </div>
-              <button type="button" className="w-full md:w-auto px-12 py-4 bg-[var(--color-renivision-text)] text-white uppercase tracking-widest text-sm hover:bg-[var(--color-renivision-accent)] transition-colors duration-300">
-                Submit Inquiry
-              </button>
-            </form>
+                <div className="flex flex-col">
+                  <label htmlFor="story" className="text-xs uppercase tracking-widest mb-2 text-white/70">Tell us your story? *</label>
+                  <textarea id="story" name="story" rows={4} className="bg-transparent border-b border-white/20 py-2 focus:outline-none focus:border-[var(--color-renivision-accent)] transition-colors resize-none text-sm leading-relaxed text-white" required></textarea>
+                </div>
+
+                <p className="text-[10px] text-white/40 leading-relaxed pt-2">
+                  This form is protected by reCAPTCHA and the Google{" "}
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--color-renivision-accent)] transition-colors">Privacy Policy</a>{" "}and{" "}
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--color-renivision-accent)] transition-colors">Terms of Service</a>{" "}apply.
+                </p>
+                <p className="text-[10px] text-white/40 leading-relaxed">
+                  Clicking SEND confirms you're okay with getting texts from ReniVision. Message and/or data rates may apply.
+                </p>
+
+                <button type="submit" className="w-full px-12 py-4 bg-white text-[var(--color-renivision-dark)] uppercase tracking-widest text-sm hover:bg-[var(--color-renivision-accent)] hover:text-white active:scale-95 transition-all duration-300 cursor-pointer font-semibold">
+                  Send Inquiry
+                </button>
+              </form>
+            </div>
           </AnimatedSection>
         </div>
       </section>

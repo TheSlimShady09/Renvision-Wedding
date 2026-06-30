@@ -19,6 +19,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -67,17 +78,17 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[var(--color-renivision-bg)] text-[var(--color-renivision-text)] w-full absolute top-20 left-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 h-screen w-screen bg-[var(--color-renivision-bg)] text-[var(--color-renivision-text)] z-40 flex flex-col items-center justify-center"
           >
-            <div className="flex flex-col items-center justify-center space-y-8 pt-20">
+            <div className="flex flex-col items-center justify-center space-y-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="font-serif text-3xl hover:text-[var(--color-renivision-accent)] transition-colors"
+                  className="font-serif text-4xl tracking-wider hover:text-[var(--color-renivision-accent)] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}

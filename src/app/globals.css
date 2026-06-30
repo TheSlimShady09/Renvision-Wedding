@@ -4,7 +4,7 @@
   --color-renivision-bg: #F9F8F6;
   --color-renivision-text: #2D2D2A;
   --color-renivision-accent: #C4A482;
-  --color-renivision-dark: #1A1A1A;
+  --color-renivision-dark: #141312;
 
   --font-serif: var(--font-cormorant);
   --font-sans: var(--font-inter);
@@ -17,6 +17,7 @@ html {
 :root {
   --background: var(--color-renivision-bg);
   --foreground: var(--color-renivision-text);
+  --surface: rgba(45, 45, 42, 0.03);
 }
 
 body {
@@ -55,10 +56,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Editorial hairline borders */
 .editorial-border {
-  border: 0.5px solid rgba(45, 45, 42, 0.1);
+  border-color: rgba(45, 45, 42, 0.1);
 }
 .editorial-border-dark {
-  border: 0.5px solid rgba(249, 248, 246, 0.15);
+  border-color: rgba(249, 248, 246, 0.15);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -76,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(249, 248, 246, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(45, 45, 42, 0.08);
 }
 
 .dark-section {
@@ -237,11 +239,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro-sprockets {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 2rem 0;
-  opacity: 0.18;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .intro-sprockets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem 0;
+    opacity: 0.18;
+  }
 }
 
 .intro-sprockets-left  { padding-left: 1.25rem; }
@@ -261,11 +269,14 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .intro-letters {
   display: flex;
   gap: 0.05em;
+  justify-content: center;
+  max-width: 90vw;
 }
 
 @keyframes intro-letter-in {
@@ -275,12 +286,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro-letter {
   font-family: var(--font-cormorant);
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(1.6rem, 5vw, 6rem);
   font-weight: 300;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.18em;
   color: #F9F8F6;
   opacity: 0;
   animation: intro-letter-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .intro-letter {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    letter-spacing: 0.35em;
+  }
 }
 
 @keyframes intro-tagline-in {

@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import ScrollProgress from "@/components/ScrollProgress";
 import CinematicIntro from "@/components/CinematicIntro";
 
 const cormorant = Cormorant_Garamond({
@@ -81,7 +80,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
         <CinematicIntro />
-        <ScrollProgress />
         <Navbar />
         <main className="flex-1">
           <PageTransition>
