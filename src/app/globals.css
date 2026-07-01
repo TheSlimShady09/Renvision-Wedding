@@ -6,7 +6,7 @@
   --color-renivision-accent: #C4A482;
   --color-renivision-dark: #141312;
 
-  --font-serif: var(--font-cormorant);
+  --font-serif: "Safira March", var(--font-cormorant), serif;
   --font-sans: var(--font-inter);
 }
 

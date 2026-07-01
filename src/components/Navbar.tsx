@@ -81,7 +81,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 h-screen w-screen bg-[var(--color-renivision-bg)] text-[var(--color-renivision-text)] z-40 flex flex-col items-center justify-center"
+            className="fixed inset-0 h-[100dvh] w-screen bg-[var(--color-renivision-bg)] text-[var(--color-renivision-text)] z-40 flex flex-col items-center justify-center"
           >
             <div className="flex flex-col items-center justify-center space-y-8">
               {navLinks.map((link) => (

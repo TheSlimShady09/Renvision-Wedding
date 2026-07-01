@@ -62,14 +62,14 @@ export default function VideoHero({
           className="flex items-center gap-4 mb-8"
         >
           <span className="h-px w-10 sm:w-16 bg-gradient-to-r from-transparent to-[var(--color-renivision-accent)]" />
-          <span className="font-sans text-[0.6rem] sm:text-xs uppercase tracking-[0.4em] text-[var(--color-renivision-accent)]">
+          <span className="font-serif text-[0.6rem] sm:text-xs uppercase tracking-[0.4em] text-[var(--color-renivision-accent)]">
             {eyebrow}
           </span>
           <span className="h-px w-10 sm:w-16 bg-gradient-to-l from-transparent to-[var(--color-renivision-accent)]" />
         </motion.div>
 
         {/* Headline — staggered word reveal */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] max-w-5xl leading-[1.14] tracking-[-0.02em]">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-[5.5rem] max-w-5xl leading-[1.14] tracking-[-0.02em]">
           {words.map((word, i) => (
             <motion.span
               key={i}

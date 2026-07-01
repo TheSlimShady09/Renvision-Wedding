@@ -99,14 +99,14 @@ export default function Home() {
       <section id="home">
         <VideoHero
           eyebrow="Renivision Weddings"
-          title="Love, written in light — and remembered forever."
+          title="Immortalizing the poetry of your love into a cinematic masterpiece."
           subtitle="Cinematic wedding films, crafted to be felt for generations — Westchester · Hudson Valley · New York City."
           videoSrc="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-kissing-under-a-veil-44755-large.mp4"
         />
       </section>
 
       {/* Intro / Philosophy Section */}
-      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative">
+      <section className="py-16 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative">
         <AnimatedSection className="flex flex-col items-center">
           {/* Gold Hairline Thread Link from Hero */}
           <div className="w-[1px] h-12 bg-gradient-to-b from-[var(--color-renivision-accent)]/40 to-transparent mb-8"></div>
@@ -119,7 +119,7 @@ export default function Home() {
             </div>
           </div>
           
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block font-semibold">Our Philosophy</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-serif mb-4 block font-semibold">Our Philosophy</span>
           <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight max-w-4xl mx-auto text-[var(--foreground)]">
             We desire to design a visual, cinematic <span className="italic font-normal text-[var(--color-renivision-accent)]">poem</span> that displays the beauty of <span className="italic font-normal text-[var(--color-renivision-accent)]">marriage</span>.
           </h2>
@@ -133,10 +133,10 @@ export default function Home() {
       </section>
 
       {/* About / Our Story Section */}
-      <section id="about" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto editorial-border border-t">
+      <section id="about" className="py-16 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto editorial-border border-t">
         {/* 1 — Text appears first */}
         <AnimatedSection className="text-center max-w-3xl mx-auto">
-          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-5 block font-semibold">Our Story</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-serif mb-5 block font-semibold">Our Story</span>
           <h2 className="font-serif text-4xl md:text-6xl mb-6 leading-tight text-[var(--foreground)]">
             Westchester & <span className="italic font-normal text-[var(--color-renivision-accent)]">New York</span> Wedding Videographer
           </h2>
@@ -186,7 +186,7 @@ export default function Home() {
       </section>
 
       {/* Films Section */}
-      <section id="films" className="relative dark-section py-20 md:py-28 pl-4 sm:pl-6 lg:pl-8 overflow-hidden">
+      <section id="films" className="relative dark-section py-16 lg:py-32 pl-4 sm:pl-6 lg:pl-8 overflow-hidden">
         <video 
           autoPlay 
           loop 
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="relative z-10 max-w-[1400px] mx-auto pr-0">
           <AnimatedSection>
             <div className="mb-12 pr-4 sm:pr-6 lg:pr-8 max-w-3xl mx-auto text-center">
-              <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block font-semibold">Our Portfolio</span>
+              <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-serif mb-4 block font-semibold">Our Portfolio</span>
               <h2 className="font-serif text-4xl md:text-6xl mb-6">Featured Films</h2>
               <p className="font-sans text-lg opacity-80 max-w-2xl mx-auto">
                 Wedding films designed to last and be passed down for generations. Exploring genuine emotions and editorial elegance.
@@ -214,10 +214,10 @@ export default function Home() {
       </section>
 
       {/* Journal / Blog Section */}
-      <section id="journal" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto editorial-border border-b border-t">
+      <section id="journal" className="py-16 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto editorial-border border-b border-t">
         <AnimatedSection>
           <div className="text-center mb-20">
-            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block">The Journal</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-serif mb-4 block">The Journal</span>
             <h2 className="font-serif text-5xl md:text-7xl uppercase tracking-wider text-opacity-80">Articles & Advice</h2>
           </div>
         </AnimatedSection>
@@ -242,10 +242,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials / Experience Section */}
-      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-neutral-50 border-y border-neutral-100">
+      <section className="py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 border-y border-neutral-100">
         <div className="max-w-4xl mx-auto text-center font-sans">
           <AnimatedSection>
-            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] mb-6 block">Client Experience</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-serif mb-6 block">Client Experience</span>
             <blockquote className="font-serif text-2xl md:text-3xl leading-relaxed mb-8 text-neutral-800">
               "Renis has outdone himself and my expectations beyond belief. The experience was amazing. We were comfortable and everything was natural because he made the experience fun! The result was everything I would have hoped for and more..."
             </blockquote>
@@ -255,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="relative dark-section py-20 md:py-28 overflow-hidden bg-[var(--color-renivision-dark)]">
+      <section id="contact" className="relative dark-section py-16 lg:py-32 overflow-hidden bg-[var(--color-renivision-dark)]">
         {/* Background Video */}
         <video 
           autoPlay 
@@ -270,7 +270,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
           <AnimatedSection className="text-center md:text-left flex flex-col items-center md:items-start text-white">
-            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-sans mb-4 block font-semibold">Say Hello</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-[var(--color-renivision-accent)] font-serif mb-4 block font-semibold">Say Hello</span>
             <h2 className="font-serif text-5xl md:text-7xl mb-6 leading-tight text-white">
               Let's Co-create <br />Your <span className="italic font-normal text-[var(--color-renivision-accent)]">Legacy</span>
             </h2>

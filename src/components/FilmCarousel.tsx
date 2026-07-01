@@ -29,29 +29,7 @@ export default function FilmCarousel({ films }: { films: Film[] }) {
 
   return (
     <div className="relative w-full">
-      {/* Navigation Buttons */}
-      <div className="flex justify-end gap-3 mb-6 pr-4 sm:pr-6 lg:pr-8">
-        <button
-          onClick={() => scroll("left")}
-          className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 active:scale-95 transition-all cursor-pointer z-20"
-          aria-label="Previous Film"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 12H5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 19L5 12L12 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 active:scale-95 transition-all cursor-pointer z-20"
-          aria-label="Next Film"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-      </div>
+
 
       <div className="relative w-full overflow-hidden">
         <div 
